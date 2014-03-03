@@ -11,7 +11,7 @@ int main(void){
     scanf("%d", &x);
     
     // The following is counter-control to estimate the power of natural number e
-    int ziNumber;
+    
 		int counter = 1;
 		int sectionOneCounter = 1;
 		int sectionTwoCounter = 1;
