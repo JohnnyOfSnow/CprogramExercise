@@ -1,3 +1,6 @@
+	
+#include <stdio.h>
+
 int main(void){
 	printf("%s  %9s","pi","estimate pi\n" );
 	double pi;
