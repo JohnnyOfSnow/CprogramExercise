@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #define SIZE 2
 
 int filp( void );
@@ -35,16 +36,16 @@ int main(void)
 
 int filp( void )
 {
-   int coin1; // first die
+   int coin1; // A coin
+   int coin2; // Decide the coin face
    
-   srand( time( NULL ) );
-
-   coin1 = 1 +  ( rand() % 1); // pick random die1 value
+   coin1 = ( rand() % 2); // pick random coin value
+   coin2 = (int)(ceil(coin1));
    
-   if (coin1 == 1) {
+   if (coin2 == 1) {
 		printf("It's heads\n");
 		return 1;
-   } else if(coin1 == 0) {
+   } else if(coin2 == 0) {
 		printf("It's tails\n");
 		return 0;
    } else {
