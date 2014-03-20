@@ -14,10 +14,10 @@ int main(void)
 	int result = 0; // A variable hole the he result of fipping coin.
     
     	/**
-     	*  I use while loop to simulate the fipping coin.
-     	*  case 1: if the coin is head, add one to index one.
-     	*  case 2: if the coin is tails, add one to index zero.
-     	*/
+     	 *  I use while loop to simulate the fipping coin.
+     	 *  case 1: if the coin is head, add one to index one.
+     	 *  case 2: if the coin is tails, add one to index zero.
+     	 */
 	while(counter <= 100) {
 		result = filp(); // call the function int filp( void )
 		if (result == 1){
