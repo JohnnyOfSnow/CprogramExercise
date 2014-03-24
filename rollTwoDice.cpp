@@ -5,6 +5,7 @@
 
 
 int rollDice(void);
+void printResult(int a[]);
 
 int main(void){
     
@@ -21,13 +22,10 @@ int main(void){
             ++dice[myDice];
     }
     
-    // Print the result header
-    printf("%s%17s\n", "Face", "Frequency");
     
-    // Display result in tabular format
-    for(int i = 2; i < SIZE; ++i){
-            printf("%4d%17d\n", i, dice[i]);
-    }
+    
+    // Display result in histogram
+    printResult(dice);
     
     system("pause");
     return 0;
@@ -47,5 +45,28 @@ int rollDice(void){
     sum = dice1 + dice2; 
     
     return sum;
+}
+
+void printResult(int a[]){
+     int starNumber = 0;
+     int underStar = 0;
+     printf("%s%11s%19s\n\n%59s\n%59s\n\n", 
+            "Response", "Frequency", "Histogram",
+            "1    1    2    2    3"," 5    0    5    0    5    0");
+     for (int k = 2; k < SIZE; ++k){
+         printf("%8d%10d           ", k, a[k]);
+         starNumber = a[k] / 200;
+         underStar = a[k] - (starNumber * 200);
+         
+         for(int star = 1; star <= starNumber; ++star ){
+                 printf("%s", "*");
+         }
+         printf(" + %d", underStar);
+         
+         puts("");
+         starNumber = 0;
+         underStar = 0;
+     }
+     printf("%130s%2s%3s\n", " * ", " = ", " 200 ");
 }
 
