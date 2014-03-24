@@ -47,26 +47,33 @@ int rollDice(void){
     return sum;
 }
 
+// A function use to print the result
 void printResult(int a[]){
-     int starNumber = 0;
-     int underStar = 0;
+     int starNumber = 0; // record the number of star
+     int underStar = 0; // record the value that is less than 200
+     
+     // output header for result columns
      printf("%s%11s%19s\n\n%59s\n%59s\n\n", 
             "Response", "Frequency", "Histogram",
             "1    1    2    2    3"," 5    0    5    0    5    0");
+            
+     // output result
      for (int k = 2; k < SIZE; ++k){
          printf("%8d%10d           ", k, a[k]);
          starNumber = a[k] / 200;
          underStar = a[k] - (starNumber * 200);
          
+         // output histogram bar representing frequency value
          for(int star = 1; star <= starNumber; ++star ){
                  printf("%s", "*");
          }
          printf(" + %d", underStar);
+         printf("    * = %d ", starNumber);
          
-         puts("");
-         starNumber = 0;
-         underStar = 0;
+         puts(""); // being new line of output
+         starNumber = 0; // Initializing 
+         underStar = 0;  // Initializing 
      }
-     printf("%130s%2s%3s\n", " * ", " = ", " 200 ");
+     printf("%130s%2s%3s\n", " * ", " = ", " 200 ");  // Print the * 's value
 }
 
