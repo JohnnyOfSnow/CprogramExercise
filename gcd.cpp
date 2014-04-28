@@ -3,11 +3,7 @@
 #define SIZE 80
 int getGCD(int x, int y);
 
-/**
-int _tmain(int argc, _TCHAR* argv[])
-{
-	return 0;
-}*/
+
 
 int main(void){
 	char s[SIZE]; // hold the string that user inputs.
@@ -16,11 +12,11 @@ int main(void){
 	int y; // y value to be input
 	int i = 0; // for loop count
 
-    // prompt user input data
+	 // prompt user input data
 	puts("Please enter two integer, and we can get GCD");
-    printf("-------------------------------------------\n");
+	printf("-------------------------------------------\n");
     
-    // user getchar to read each character
+    	// user getchar to read each character
 	while(i < SIZE - 1 && (c = getchar()) != '\n'){
 		s[i++] = c;
 	}
@@ -30,10 +26,10 @@ int main(void){
 	int gcd = getGCD(x,y); // Invoke function to get gcd
 	printf("--------------------------------------------\n");
 	if (gcd == 0){
-         printf("Your input is wrong, GCD is based on non-negative number and not zero.\n");   
-    } else {
+             printf("Your input is wrong, GCD is based on non-negative number and not zero.\n");   
+    	} else {
    	     printf("We can get GCD is %d for %d and %d\n", gcd, x, y); 
-    }
+    	}
 
 	system("pause");
 	return 0;
