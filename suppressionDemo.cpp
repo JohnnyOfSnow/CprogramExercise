@@ -7,15 +7,15 @@
 int main( void )
 {
 	
-    int areanumber;
-    int phonenumber1;
-    int phonenumber2;
-
+          int areanumber;
+          int phonenumber1;
+          int phonenumber2;
+    
 	  // prompt user input data
 	  puts("You should enter a phone number in this form (555) 555-5555:");
 	  puts("--------------------------------------------------------------");
-    scanf("%*c%d%*c%d%*c%d", &areanumber, &phonenumber1, &phonenumber2);
-   	// user getchar to read each character
+    	  scanf("%*c%d%*c%d%*c%d", &areanumber, &phonenumber1, &phonenumber2);
+   	  // user getchar to read each character
 	  puts("--------------------------------------------------------------");
 	
 	  printf("The area number is %d\n", areanumber);
