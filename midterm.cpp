@@ -99,6 +99,9 @@ void deal( unsigned int wDeck[][ FACES ], const char *wFace[],
       } // end for
    } // end for
    
+   for(card = 1; card < 6; ++card){
+         printf("%d\n", array[card]);
+   } 
    
    onepair(array,face);
    twopair(array,face);
@@ -116,7 +119,7 @@ void onepair(int array[], const char *wFace[]){
           hold = array[card] % 13;
           count[hold] = count[hold] + 1;   
      }
-     puts(" ");
+    
      
      for(card = 0; card <=12; ++card) {
               if(count[card] == 2){
@@ -135,7 +138,7 @@ void twopair(int array[], const char *wFace[]){
           hold = array[card] % 13;
           count[hold] = count[hold] + 1;   
      }
-     puts(" ");
+     
      
      for(card = 0; card <=12; ++card) {
               if(count[card] == 2){
@@ -157,7 +160,7 @@ void threesame(int array[], const char *wFace[]){
           hold = array[card] % 13;
           count[hold] = count[hold] + 1;   
      }
-     puts(" ");
+     
      
      for(card = 0; card <=12; ++card) {
               if(count[card] == 3){
@@ -175,7 +178,7 @@ void foursame(int array[], const char *wFace[]){
           hold = array[card] % 13;
           count[hold] = count[hold] + 1;   
      }
-     puts(" ");
+     
      
      for(card = 0; card <=12; ++card) {
               if(count[card] == 4){
@@ -190,14 +193,19 @@ void sameflower(int array[], const char *wSuit[]){
      int hold;
      
      for(card = 1; card <= 5; ++card) {
-          hold = array[card] % 4;
-          count[hold] = count[hold] + 1;   
+          if(array[card] % 13 == 0){
+                  hold = (array[card] / 13) - 1;
+                  printf("%d\n", hold);       
+          } else {
+                  hold = array[card] / 13;
+                  printf("%d\n", hold);
+                  count[hold] = count[hold] + 1;
+          }       
      }
-     puts(" ");
      
      for(card = 0; card <= 3; ++card) {
               if(count[card] == 5){
-                             printf("You have a four same of %-8s\n", wSuit[card]);
+                             printf("You have a five same of %-8s\n", wSuit[card]);
               }
      }
 }
