@@ -96,21 +96,38 @@ void deal( const Card * const wDeck)
         "Nine", "Ten", "Jack", "Queen" };
    size_t i; // counter
    int array[6];
+   int count = 0;
+   int hand = 1;
 
-   printf("You get five card are\n");
+   printf("現在為第 %d 手牌\n", hand);
    
    puts(" ");
    // loop through wDeck
-   for ( i = 1; i < 6; ++i ) {
+   for ( i = 1; i < 51; ++i ) {
       printf( "%5s of %-8s\n", wDeck[ i ].face, wDeck[ i ].suit);
-      array[i] = wDeck[ i ].number + 1;
+      count = count + 1;
+      array[count] = wDeck[ i ].number + 1;
+      if(count == 5){
+      	puts(" ");
+      	hand = hand + 1;
+   	onepair(array,face);
+   	twopair(array,face);
+  	threesame(array,face);
+   	foursame(array,face);
+   	sameflower(array,suit);
+	count = 0;
+	int array[6] = {0};
+	puts("-------------------------");
+	if(i == 50){
+		
+	} else {
+		printf("現在為第 %d 手牌\n", hand);
+		puts(" "); 
+	}
+      	
+      }
    }
-   puts(" ");
-   onepair(array,face);
-   twopair(array,face);
-   threesame(array,face);
-   foursame(array,face);
-   sameflower(array,suit);  
+    
    
 } // end function deal
 
