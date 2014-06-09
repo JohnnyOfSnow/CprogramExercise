@@ -95,11 +95,11 @@ void insertNode( TreeNodePtr *treePtr, char *value )
    } // end if
    else { // tree is not empty
       // data to insert is greaterless than data in current node
-      if(strcmp(value ,( *treePtr )->data) == 1){
+      if(strcmp(( *treePtr )->data ,value)== 1){
          insertNode( &( ( *treePtr )->rightPtr ), value );               
       }                               
       // data to insert is less than data in current node
-      else if(strcmp(value ,( *treePtr )->data) == -1){
+      else if(strcmp(( *treePtr )->data ,value) == -1){
          insertNode( &( ( *treePtr )->leftPtr ), value );               
       } // end else if                                      
       else { // duplicate data value ignored
